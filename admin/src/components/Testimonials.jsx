@@ -63,10 +63,10 @@ const Testimonials = () => {
 
   return (
     <div className="p-5">
-      <h2 className="text-2xl font-bold mb-4">Admin Testimonials</h2>
+      <h2 className="text-2xl font-bold mb-4 pt-[60px] md:pt-8">Admin Testimonials</h2>
 
       {/* Upload Form */}
-      <form onSubmit={handleSubmit} className="mb-5 space-y-3">
+      <form onSubmit={handleSubmit} className="mb-5 space-y-3  w-[100%]">
         <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" required className="border p-2 w-full" />
         <input type="text" name="role" value={formData.role} onChange={handleChange} placeholder="Title" className="border p-2 w-full" />
         <textarea name="review" value={formData.review} onChange={handleChange} placeholder="Description" required className="border p-2 w-full"></textarea>

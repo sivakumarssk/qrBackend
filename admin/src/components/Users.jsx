@@ -9,8 +9,8 @@ const Users = () => {
   }, []);
 
   return (
-    <div className="p-5">
-      <h2 className="text-2xl font-bold mb-4">Users</h2>
+    <div className="p-5 w-[100%]">
+      <h2 className="text-2xl font-bold mb-4 pt-[60px] md:pt-8">Users</h2>
       <table className="w-full border-collapse border">
         <thead>
           <tr className="border">

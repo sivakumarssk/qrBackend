@@ -4,7 +4,8 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const fileUpload = require('express-fileupload');
 const userRouter = require('./routes/userRoutes')
-const path = require('path')
+const path = require('path');
+const resetDailyCounts = require('./cronJobs');
 
 // Initialize Express
 const app = express();
@@ -27,7 +28,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
+app.get("/api/app", (req, res) => {
     const userAgent = req.headers["user-agent"].toLowerCase();
     console.log("User-Agent:", userAgent);
     console.log("Query Parameters:", req.query);
@@ -68,4 +69,5 @@ app.get('*', (req, res) => {
 // Start Server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
+    resetDailyCounts();
 });
