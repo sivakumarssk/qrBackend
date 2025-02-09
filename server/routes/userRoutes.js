@@ -6,6 +6,8 @@ const { uploadqrFilesFiles } = require('../controlers/qrFilesControler');
 const { uploadTestimonial, deleteTestmonials, getTestmonials } = require('../controlers/testimonialsControler');
 const { getCounts, incrementCount } = require('../controlers/countControllerController');
 const { uploadCardsBackground, getCardsBackground, deleteCardsBackground, deleteSingleImage } = require('../controlers/cardsBackController');
+const { getPrice, updatePrice } = require('../controlers/priceController');
+const { createReferal, getReferals } = require('../controlers/referalController');
 
 router.post('/register', userControler.registerUser)
 router.post('/login', userControler.loginUser)
@@ -25,5 +27,11 @@ router.post('/upload',uploadCardsBackground);
 router.get('/cardsBackground', getCardsBackground);
 router.delete('/deleteCardsBackground/:id',deleteCardsBackground);
 router.delete('/deleteCardsBackgroundImage/:id', deleteSingleImage);
+
+router.get('/getPrice',getPrice);
+router.post('/addPrice', updatePrice);
+
+router.get('/referals',getReferals);
+router.post('/addreferals', createReferal);
 
 module.exports=router

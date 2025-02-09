@@ -4,6 +4,8 @@ import Testimonials from "./components/Testimonials";
 import Users from "./components/Users";
 import Dashboard from "./components/DashBoard";
 import CardsBackgroundImages from "./components/CardsBackground";
+import PriceScreen from "./components/PriceScreen";
+import Referrals from "./components/Referrals";
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/users" element={<Users />} />
           <Route path="/cards" element={<CardsBackgroundImages />} />
+          <Route path="/prices" element={<PriceScreen />} />
+          <Route path="/referal" element={<Referrals />} />
         </Routes>
       </div>
     </Router>

@@ -58,9 +58,19 @@ const Sidebar = () => {
               Cards
             </Link>
           </li>
-          <li>
+          <li className="mb-4">
             <Link to="/users" className="hover:text-gray-400" onClick={handleLinkClick}>
               Users
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link to="/prices" className="hover:text-gray-400" onClick={handleLinkClick}>
+             Prices
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link to="/referal" className="hover:text-gray-400" onClick={handleLinkClick}>
+            Referal
             </Link>
           </li>
         </ul>
