@@ -50,7 +50,12 @@ const Sidebar = () => {
           </li>
           <li className="mb-4">
             <Link to="/testimonials" className="hover:text-gray-400" onClick={handleLinkClick}>
-              Testimonials
+              Our Partners
+            </Link>
+          </li>
+          <li className="mb-4">
+            <Link to="/cards" className="hover:text-gray-400" onClick={handleLinkClick}>
+              Cards
             </Link>
           </li>
           <li>

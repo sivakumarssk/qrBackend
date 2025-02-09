@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import Testimonials from "./components/Testimonials";
 import Users from "./components/Users";
 import Dashboard from "./components/DashBoard";
+import CardsBackgroundImages from "./components/CardsBackground";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/cards" element={<CardsBackgroundImages />} />
         </Routes>
       </div>
     </Router>

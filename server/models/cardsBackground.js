@@ -1,8 +1,11 @@
-
-const mongoose =require('mongoose')
+// models/cardsBackground.js
+const mongoose = require('mongoose');
 
 const cardsBackgroundSchema = new mongoose.Schema({
-    image:[string]
-})
+  image: {
+    type: [String],
+    default: []
+  }
+});
 
-module.exports=mongoose.model('cardsBackground',cardsBackgroundSchema)
+module.exports = mongoose.model('cardsBackground', cardsBackgroundSchema);
