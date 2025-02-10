@@ -10,12 +10,20 @@ const Referrals = () => {
   const [searchText, setSearchText] = useState("");
   const [searchDate, setSearchDate] = useState("");
 
+  // Helper function to get local ISO date string (YYYY-MM-DD)
+  const getLocalISODate = (dateValue) => {
+    const d = new Date(dateValue);
+    if (isNaN(d.getTime())) return "";
+    // "en-CA" returns the date in ISO format: YYYY-MM-DD
+    return d.toLocaleDateString("en-CA");
+  };
+
   // Fetch referrals when the component mounts
   useEffect(() => {
     const fetchReferrals = async () => {
       try {
         const response = await axios.get("https://admin.qrandcards.com/api/referals");
-        console.log(response.data, 'response.data?.referals');
+        console.log(response.data, "response.data?.referals");
         setReferrals(response.data || []);
       } catch (err) {
         console.error("Error fetching referrals:", err);
@@ -30,12 +38,13 @@ const Referrals = () => {
 
   // Filter referrals based on searchText and searchDate
   const filteredReferrals = referrals.filter((referral) => {
-    // Filter by referral text
+    // Filter by referral text (case-insensitive)
     const matchText = referral.referal.toLowerCase().includes(searchText.toLowerCase());
-    // Filter by date if provided; assume referral.createdAt exists
+
+    // Filter by date if provided; using local date conversion
     let matchDate = true;
     if (searchDate && referral.createdAt) {
-      const createdAtDate = new Date(referral.createdAt).toISOString().split("T")[0];
+      const createdAtDate = getLocalISODate(referral.createdAt);
       matchDate = createdAtDate === searchDate;
     }
     return matchText && matchDate;
@@ -97,7 +106,7 @@ const Referrals = () => {
                   <td className="border border-gray-300 px-4 py-2">{referral.referal}</td>
                   <td className="border border-gray-300 px-4 py-2">{referral.type}</td>
                   <td className="border border-gray-300 px-4 py-2">
-                    {referral.createdAt ? new Date(referral.createdAt).toLocaleDateString() : "N/A"}
+                    {referral.createdAt ? getLocalISODate(referral.createdAt) : "N/A"}
                   </td>
                 </tr>
               ))}
