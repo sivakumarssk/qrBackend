@@ -8,6 +8,11 @@ const { getCounts, incrementCount } = require('../controlers/countControllerCont
 const { uploadCardsBackground, getCardsBackground, deleteCardsBackground, deleteSingleImage } = require('../controlers/cardsBackController');
 const { getPrice, updatePrice } = require('../controlers/priceController');
 const { createReferal, getReferals } = require('../controlers/referalController');
+const { registerAdmin, loginAdmin } = require('../controlers/adminLoginControler');
+
+
+router.post('/registerAdmin', registerAdmin)
+router.post('/loginAdmin', loginAdmin)
 
 router.post('/register', userControler.registerUser)
 router.post('/login', userControler.loginUser)

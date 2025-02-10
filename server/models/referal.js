@@ -11,6 +11,6 @@ const referalSchema = new mongoose.Schema({
     type:{
         type:String,
     }
-})
+}, { timestamps: true })
 
 module.exports=mongoose.model('Referal',referalSchema)
