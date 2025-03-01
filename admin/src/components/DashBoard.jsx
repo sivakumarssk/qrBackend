@@ -106,6 +106,18 @@ const Dashboard = () => {
             <p className="text-2xl font-bold">{counts.dailyInvitation}</p>
           </div>
 
+          {/* Total Property */}
+          <div className="bg-white p-5 rounded-lg shadow-md">
+            <h2 className="text-lg font-bold text-gray-700">Total Property</h2>
+            <p className="text-2xl font-bold">{counts.totalProperty}</p>
+          </div>
+
+          {/* Daily Property */}
+          <div className="bg-white p-5 rounded-lg shadow-md">
+            <h2 className="text-lg font-bold text-gray-700">Daily Property</h2>
+            <p className="text-2xl font-bold">{counts.dailyProperty}</p>
+          </div>
+
         </div>
       ) : (
         <p className="text-red-500">Failed to load data</p>

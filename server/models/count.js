@@ -14,6 +14,8 @@ const countSchema = new mongoose.Schema({
     dailyBio: { type: Number, default: 0 },
     totalInvitation: { type: Number, default: 0 },
     dailyInvitation: { type: Number, default: 0 },
+    totalProperty: { type: Number, default: 0 },
+    dailyProperty: { type: Number, default: 0 },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Count', countSchema);

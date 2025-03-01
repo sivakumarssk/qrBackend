@@ -16,6 +16,8 @@ const PriceScreen = () => {
     dicountpriceBio: 0,
     totalpriceInvitation: 0,
     dicountpriceInvitation: 0,
+    totalpriceProperty: 0,
+    dicountpriceProperty: 0,
   });
   const [loading, setLoading] = useState(false);
 
@@ -42,6 +44,8 @@ const PriceScreen = () => {
           dicountpriceBio,
           totalpriceInvitation,
           dicountpriceInvitation,
+          totalpriceProperty,
+          dicountpriceProperty,
         } = response.data;
         setFormData({
           totalpriceQR,
@@ -56,6 +60,8 @@ const PriceScreen = () => {
           dicountpriceBio,
           totalpriceInvitation,
           dicountpriceInvitation,
+          totalpriceProperty,
+          dicountpriceProperty,
         });
       }
     } catch (error) {
@@ -234,6 +240,29 @@ const PriceScreen = () => {
             type="number"
             name="dicountpriceInvitation"
             value={formData.dicountpriceInvitation}
+            onChange={handleChange}
+            className="border p-2 w-full"
+          />
+        </div>
+
+        {/* Total Price Property */}
+        <div>
+          <label className="block mb-1">Total Price Property:</label>
+          <input
+            type="number"
+            name="totalpriceProperty"
+            value={formData.totalpriceProperty}
+            onChange={handleChange}
+            className="border p-2 w-full"
+          />
+        </div>
+        {/* Discount Price Property */}
+        <div>
+          <label className="block mb-1">Discount Price Property:</label>
+          <input
+            type="number"
+            name="dicountpriceProperty"
+            value={formData.dicountpriceProperty}
             onChange={handleChange}
             className="border p-2 w-full"
           />

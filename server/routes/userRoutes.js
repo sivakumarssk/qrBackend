@@ -42,7 +42,6 @@ router.post('/addreferals', createReferal);
 
 const razorpay = new Razorpay({
     key_id: "rzp_live_HJLLQQPlyQFOGr",
-    key_secret: "cm2v1OSggPZ5vVHX5rl3jrq4",
   });
   
   // Create order endpoint

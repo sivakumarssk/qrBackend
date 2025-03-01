@@ -13,6 +13,8 @@ const PriceSchema = new mongoose.Schema({
     dicountpriceBio: { type: Number, default: 0 },
     totalpriceInvitation: { type: Number, default: 0 },
     dicountpriceInvitation: { type: Number, default: 0 },
+    totalpriceProperty: { type: Number, default: 0 },
+    dicountpriceProperty: { type: Number, default: 0 },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Price', PriceSchema);
